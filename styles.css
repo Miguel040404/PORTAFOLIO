@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #010101;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos fluyan verticalmente */
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-left: 100px;
+}
+
+.icono {
+  width: 70px;
+  height: 70px;
+  margin-left: 20px;
+}
+
+header {
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, #938c8c, #222121); /* Degradado de fondo del header */
+  z-index: 1000; /* Asegúrate de que quede sobre otros elementos */
+  padding: 10px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra opcional para destacarlo */
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  padding: 0 20px; /* Espaciado interno */
+}
+
+.menu-container2 ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  margin-left: 500px;
+}
+
+.menu-container2 a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  transition: color 1s;
+
+}
+
+.menu-container2 a:hover {
+  color: #21c321; /* Efecto al pasar el mouse */
+}
+
+h1:hover {
+  transition: color 10s;
+  color: #21c321; /* Efecto al pasar el mouse */
+}
+
+/* Contenedor principal del carrusel */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+/* Lista de imágenes */
+.carousel-images {
+  display: flex;
+  width: 500%; /* Depende del número de imágenes */
+  animation: slide 40s infinite;
+}
+
+/* Cada imagen */
+.carousel-images img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Animación */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-80%); }
+  /* 45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(0); } */
+}
+
