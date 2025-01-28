@@ -1,3 +1,5 @@
+
+
 body {
   font-family: Arial, sans-serif;
   background-image: linear-gradient(to bottom, #938c8c, #222121 , #222121);
@@ -7,6 +9,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+ 
 }
 
 h1 {
@@ -22,9 +25,8 @@ h1 {
 }
 
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
+  /* position: fixed; */
+  /* top: 0; */
   background-image: linear-gradient(to right, #8c938d, #3e413e , #212221);
   z-index: 1000;
   padding: 10px 0;
@@ -46,7 +48,7 @@ header {
 
 .menu-container2 a {
   text-decoration: none;
-  color: #5a8b5d;
+  color: #fff;
   font-size: 20px;
   transition: color 1s;
 }
@@ -63,22 +65,30 @@ h1:hover {
 
 
 .carousel {
+  display: flex;
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 200px;
   overflow: hidden;
-  margin-top: 99px;
+  /* margin-top: 99px; */
 }
 
 .carousel-images img {
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
   object-fit: cover;
 }
 
 .carousel-images {
   display: flex;
-  animation: slide 20s infinite;
+  /* will-change: transform; */
+  animation: slide 15s linear infinite;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel:hover .carousel-images {
+  animation-play-state: paused;
 }
 
 @keyframes slide {
@@ -86,7 +96,21 @@ h1:hover {
     transform: translateX(0);
   }
 
-  20% {
+  100% {
+    transform: translateX(-100%);
+  }
+
+  /* 20% {
+    transform: translateX(0);
+  } */
+
+  /* 25% {
+    transform: translateX(-80%);
+  } */
+
+
+
+    /* 20% {
     transform: translateX(0);
   }
 
@@ -95,10 +119,14 @@ h1:hover {
   }
 
   45% {
-    transform: translateX(-100%);
+    transform: translateX(-80%);
   }
 
-  50% {
+  100% {
+    transform: translateX(0);
+  } */
+
+  /* 50% {
     transform: translateX(-200%);
   }
 
@@ -108,19 +136,19 @@ h1:hover {
 
   75% {
     transform: translateX(-265%);
-  }
+  } */
 }
 
 
 
-.container {
+.contenedor {
   display: flex;
   justify-content: center;
   margin: 20px auto;
   max-width: 1200px;
 }
 
-.card {
+.tarjeta {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -135,12 +163,16 @@ h1:hover {
   margin: 10px;
 }
 
-.card:hover {
+#tarjeta2 {
+  flex-direction: row-reverse;
+}
+
+.tarjeta:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-image {
+.tarjeta-image {
   width: 50%;
   height: 100%;
   display: flex;
@@ -211,7 +243,7 @@ footer p {
   position: absolute;
   width: 150px;
   height: 150px;
-  background: rgba(171, 28, 28, 0.9);
+  background: rgba(81, 179, 99, 0.9);
   border: 2px solid #fff;
   display: flex;
   justify-content: center;
@@ -222,9 +254,15 @@ footer p {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+.cube-container:hover .cube {
+  animation-play-state: paused;
+}
+
 /* Posiciones de las caras */
 #cara1 {
   transform: rotateY(0deg) translateZ(75px);
+  background-image: url('/imagenes/js.png');
+  background-size: cover;
 }
 #cara2 {
   transform: rotateY(180deg) translateZ(75px);
