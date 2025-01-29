@@ -59,7 +59,7 @@ header {
 }
 
 h1:hover {
-  transition: color 5s;
+  transition: color 3s;
   color: #21c321;
 }
 
@@ -71,7 +71,7 @@ h1:hover {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  /* margin-top: 99px; */
+  margin-bottom: 100px;
 }
 
 .carousel-images img {
@@ -109,6 +109,25 @@ h1:hover {
   justify-content: center;
   margin: 20px auto;
   max-width: 1200px;
+  border-radius: 10px;
+}
+
+.tarjeta-arcoiris {
+  position: relative;
+  padding: 5px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #ff0, #0f0, #00f, #4b0082, #8a2be2);
+  background-size: 400% 400%;
+  animation: bordeAnimado 6s infinite linear;
+
+    /* Adaptabilidad al contenedor padre */
+    width: 100%;  /* Se ajusta al ancho del contenedor padre */
+    height: auto; /* Se ajusta automáticamente en altura según el contenido */
+}
+
+.tarjeta-arcoiris:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .tarjeta {
@@ -125,23 +144,29 @@ h1:hover {
   cursor: pointer;
   margin: 10px;
   position: relative;
-  padding: 10px;
-  border: 5px solid transparent;
-  animation: borderAnimation 6s infinite linear;
-  border-image-source: linear-gradient(45deg, #ff0000, #ff7300, #ff0, #0f0, #00f, #4b0082, #8a2be2);
-  border-image-slice: 1;
 }
 
-@keyframes borderAnimation {
+@keyframes bordeAnimado {
   0% {
-    border-image-source: linear-gradient(45deg, #ff0000, #ff7300, #ff0, #0f0, #00f, #4b0082, #8a2be2);
+    background-position: 0% 50%;
   }
   50% {
-    border-image-source: linear-gradient(45deg, #8a2be2, #4b0082, #00f, #0f0, #ff0, #ff7300, #ff0000);
+    background-position: 100% 50%;
   }
   100% {
-    border-image-source: linear-gradient(45deg, #ff0000, #ff7300, #ff0, #0f0, #00f, #4b0082, #8a2be2);
+    background-position: 0% 50%;
   }
+}
+
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 11, 11, 0.142);
+  z-index: -1;
 }
 
 .tarjeta:hover {
@@ -149,13 +174,23 @@ h1:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.card-image {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
+/* .card-image {
+  width: 40%;  
+  height: 150px; 
+} */
 
 #tarjeta2 {
   flex-direction: row-reverse;
 }
-
-
 
 .tarjeta-image {
   width: 50%;
@@ -205,6 +240,113 @@ footer {
 footer p {
   margin: 0;
   padding: 10px;
+}
+
+/* formulario */
+
+/* Estilo principal */
+.main {
+  width: 700px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.2);
+  margin: 120px auto;
+  background: #f0fdf4; /* Verde claro */
+}
+
+/* Ocultar checkbox */
+#chk {
+  display: none;
+}
+
+/* Diseño de Contacto */
+.contacto {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Labels */
+label {
+  color: #2e8b57; /* Verde oscuro */
+  font-size: 2rem;
+  justify-content: center;
+  margin: 40px;
+  display: flex;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+  font-weight: bold;
+}
+
+/* Inputs y textarea */
+input, textarea {
+  width: 70%;
+  background: #eaf6e5; /* Verde muy claro */
+  justify-content: center;
+  display: flex;
+  margin: 15px auto;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Botones */
+button {
+  width: 70%;
+  height: 40px;
+  margin: 15px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #2e8b57;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  transition: .2s ease-in;
+  cursor: pointer;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+  background: #1c5d3a;
+}
+
+/* Estilo de "Sobre mí" */
+.sobre-mi {
+  height: 450px;
+  background: #d9f2d1; /* Verde pastel */
+  border-radius: 50% / 12%;
+  transform: translateY(-180px);
+  transition: .8s ease-in-out;
+}
+
+/* Estilos del label en "Sobre mí" */
+.sobre-mi label {
+  color: #1c5d3a;
+  transform: scale(.7);
+}
+
+/* Animación de cambio */
+#chk:checked ~ .sobre-mi {
+  transform: translateY(-500px);
+}
+
+#chk:checked ~ .sobre-mi label {
+  transform: scale(1);
+}
+
+#chk:checked ~ .contacto label {
+  transform: scale(.7);
 }
 
 

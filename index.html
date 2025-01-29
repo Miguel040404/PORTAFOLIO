@@ -48,18 +48,22 @@
     <!-- Contenedores de la informacion -->
 
     <div class="contenedor">
-        <div class="tarjeta">
-            <div class="card-image">
-                <img src="/imagenes/img1.png" alt="Imagen 1">
-            </div>
-            <div class="card-content">
-                <h2>Card Title 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="tarjeta-arcoiris">
+            <div class="tarjeta">
+                <div class="card-image">
+                    <img src="/imagenes/img1.png" alt="Imagen 1">
+                </div>
+                <div class="card-content">
+                    <h2>Card Title 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
             </div>
         </div>
     </div>
+    
 
     <div class="contenedor">
+        <div class="tarjeta-arcoiris">
         <div id="tarjeta2" class="tarjeta">
             <div class="card-image">
                 <img src="/imagenes/img2.png" alt="Imagen 1">
@@ -69,9 +73,11 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
+        </div>
     </div>
 
     <div class="contenedor">
+        <div class="tarjeta-arcoiris">
         <div class="tarjeta">
             <div class="card-image">
                 <img src="/imagenes/image.webp" alt="Imagen 1">
@@ -81,7 +87,34 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
+        </div>
     </div>
+
+    <!-- formulario -->
+
+    <div class="main">
+        <input type="checkbox" id="chk">
+        
+        <div class="contacto"> 
+            <form>
+                <label for="chk">Contáctame</label>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+                <button>Enviar Mensaje</button> 
+            </form>
+        </div>
+    
+        <div class="sobre-mi">
+            <form>
+                <label for="chk">Sobre Mí</label>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <textarea name="descripcion" placeholder="Describe brevemente tu experiencia..." required></textarea>
+                <button>Guardar Información</button>
+            </form>
+        </div>
+    </div>
+    
 
     <!-- Cubo 3d -->
 
