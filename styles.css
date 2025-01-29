@@ -103,6 +103,7 @@ h1:hover {
 }
 
 /*Tarjetas*/
+
 .contenedor {
   display: flex;
   justify-content: center;
@@ -123,16 +124,38 @@ h1:hover {
   overflow: hidden;
   cursor: pointer;
   margin: 10px;
+  position: relative;
+  padding: 10px;
+  border: 5px solid transparent;
+  animation: borderAnimation 6s infinite linear;
+  border-image-source: linear-gradient(45deg, #ff0000, #ff7300, #ff0, #0f0, #00f, #4b0082, #8a2be2);
+  border-image-slice: 1;
 }
 
-#tarjeta2 {
-  flex-direction: row-reverse;
+@keyframes borderAnimation {
+  0% {
+    border-image-source: linear-gradient(45deg, #ff0000, #ff7300, #ff0, #0f0, #00f, #4b0082, #8a2be2);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #8a2be2, #4b0082, #00f, #0f0, #ff0, #ff7300, #ff0000);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #ff0000, #ff7300, #ff0, #0f0, #00f, #4b0082, #8a2be2);
+  }
 }
 
 .tarjeta:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+
+#tarjeta2 {
+  flex-direction: row-reverse;
+}
+
+
 
 .tarjeta-image {
   width: 50%;
@@ -206,7 +229,7 @@ footer p {
   width: 150px;
   height: 150px;
   /* background: rgba(6, 170, 36, 0.9); */
-  border: 2px solid #70c75b;
+  border: 2px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,25 +246,30 @@ footer p {
 /* Posiciones de las caras */
 #cara1 {
   transform: rotateY(0deg) translateZ(75px);
-  background-image: url('/imagenes/js.png');
-  background-size: cover;
-  background-color: #efc313c2;
+  background-color: #f8f2f29f;
 }
 #cara2 {
   transform: rotateY(180deg) translateZ(75px);
-  
+  background-color: #eb11119f;
 }
 #cara3 {
   transform: rotateY(-90deg) translateZ(75px);
+  background-color: #efef06c2;
 }
 #cara4 {
   transform: rotateY(90deg) translateZ(75px);
+  
+  background-image: url('/imagenes/js.png');
+  background-size: cover;
+  background-color: #efc00690;
 }
 #cara5 {
   transform: rotateX(90deg) translateZ(75px);
+  background-color: #18c7e69f;
 }
 #cara6 {
   transform: rotateX(-90deg) translateZ(75px);
+  background-color: #13b1ef70;
 }
 
 /* Animación */
